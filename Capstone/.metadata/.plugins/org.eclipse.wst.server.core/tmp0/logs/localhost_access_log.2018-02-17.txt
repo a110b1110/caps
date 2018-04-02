@@ -1,0 +1,15 @@
+127.0.0.1 - - [17/Feb/2018:21:51:35 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:07 +0900] "GET /Capstone/dbconnTest.jsp HTTP/1.1" 200 139
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:27 +0900] "GET /Capstone/index.jsp HTTP/1.1" 200 636
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:27 +0900] "GET /Capstone/css/background.css?ver=2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:29 +0900] "GET /Capstone/join.do HTTP/1.1" 200 1326
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:29 +0900] "GET /Capstone/css/background_sub.css?ver=2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:29 +0900] "GET /Capstone/css/joinForm.css?ver=2 HTTP/1.1" 200 1091
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:54 +0900] "POST /Capstone/join.do HTTP/1.1" 200 1388
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:54 +0900] "GET /Capstone/css/background_sub.css?ver=2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:52:54 +0900] "GET /Capstone/css/joinForm.css?ver=2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:53:16 +0900] "POST /Capstone/join.do HTTP/1.1" 500 3501
+127.0.0.1 - - [17/Feb/2018:21:56:55 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:56:56 +0900] "GET /Capstone/index.jsp HTTP/1.1" 200 636
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:56:56 +0900] "GET /Capstone/css/background.css?ver=2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Feb/2018:21:57:02 +0900] "GET /Capstone/dbconnTest.jsp HTTP/1.1" 200 116

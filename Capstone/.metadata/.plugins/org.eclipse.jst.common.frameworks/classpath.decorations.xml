@@ -1,0 +1,10 @@
+<classpath>
+  <container id="Capstone!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="H:/Projects/Capstone/Capstone/WebContent/WEB-INF/lib/commons-dbcp2-2.1.1.jar">
+      <source-attachment-path>/Capstone/WebContent/WEB-INF/lib/commons-dbcp2-2.1.1.jar</source-attachment-path>
+    </entry>
+    <entry id="/Capstone/WebContent/WEB-INF/classes">
+      <source-attachment-path>/Capstone</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

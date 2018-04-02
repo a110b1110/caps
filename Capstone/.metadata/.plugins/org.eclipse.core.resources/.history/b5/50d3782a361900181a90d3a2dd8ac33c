@@ -1,0 +1,23 @@
+package article.team.service;
+
+import article.notice.model.*;
+
+public class TeamWriteData {
+
+	private Notice article;
+	private NoticeContent content;
+
+	public TeamWriteData(Notice article, NoticeContent content) {
+		this.article = article;
+		this.content = content;
+	}
+
+	public Notice getArticle() {
+		return article;
+	}
+
+	public String getContent() {
+		return content.getContent();
+	}
+
+}

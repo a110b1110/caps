@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Capstone/WebContent/WEB-INF/view/deleteSuccess.jsp&apos; to &apos;deleteTeamboardSuccess.jsp&apos;" description="Rename resource &apos;deleteSuccess.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/view/deleteSuccess.jsp" name="deleteTeamboardSuccess.jsp" stamp="1519548110382" updateReferences="true"/>
+</session>

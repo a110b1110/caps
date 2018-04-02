@@ -1,0 +1,5 @@
+package article.team.command;
+
+public class DeleteArticleHandler {
+
+}

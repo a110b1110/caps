@@ -1,0 +1,28 @@
+package article.team.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import article.common.ArticleContentNotFoundException;
+import article.common.ArticleNotFoundException;
+import article.team.service.DeleteArticleService;
+import article.team.service.TeamWriteData;
+
+public class DeleteArticleHandler {
+	
+	private DeleteArticleService deleteService = new DeleteArticleService();
+	
+	public String process(HttpServletRequest req, HttpServletResponse res) 
+			throws Exception {
+		String fileNo = req.getParameter("fileNo");
+		try {
+			TeamWriteData articleData = deleteService.deleteArticle(fileNo);
+			//req.setAttribute("articleData", articleData);
+			return "/WEB-INF/view/deleteTeamboardSuccess.jsp";
+		} catch (ArticleNotFoundException | ArticleContentNotFoundException e) {
+			req.getServletContext().log("no article", e);
+			res.sendError(HttpServletResponse.SC_NOT_FOUND);
+			return null;
+		}
+	}
+}

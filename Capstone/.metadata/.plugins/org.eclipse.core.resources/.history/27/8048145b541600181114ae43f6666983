@@ -1,0 +1,65 @@
+package article.notice.dao;
+
+import java.security.spec.RSAKeyGenParameterSpec;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import article.notice.model.NoticeContent;
+import jdbc.JdbcUtil;
+
+public class NoticeContentDao {
+
+   public NoticeContent insert(Connection conn, NoticeContent content) 
+   throws SQLException {
+      PreparedStatement pstmt = null;
+      try {
+         pstmt = conn.prepareStatement(
+               "insert into writenotice " + 
+               "(postNo, content) values (?,?)");
+         pstmt.setLong(1, content.getNumber());
+         pstmt.setString(2, content.getContent());
+         int insertedCount = pstmt.executeUpdate();
+         if (insertedCount > 0) {
+            return content;
+         } else {
+            return null;
+         }
+      } finally {
+         JdbcUtil.close(pstmt);
+      }
+   }
+   
+   public NoticeContent selectById(Connection conn, int no) throws SQLException {
+      PreparedStatement pstmt = null;
+      ResultSet rs = null;
+      try {
+         pstmt = conn.prepareStatement(
+               "select * from writenotice where postNo = ?");
+         pstmt.setInt(1, no);
+         rs = pstmt.executeQuery();
+         NoticeContent content = null;
+         if (rs.next()) {
+            content = new NoticeContent(
+                  rs.getInt("postId"), rs.getString("content"), rs.getString("original_Filename"),
+                  rs.getString("stored_Filename"), rs.getLong("file_Size"), rs.getString("file_Ext"));
+         }
+         return content;
+      } finally {
+         JdbcUtil.close(rs);
+         JdbcUtil.close(pstmt);
+      }
+   }
+
+   public int update(Connection conn, int no, String content, String fileName) throws SQLException {
+      try (PreparedStatement pstmt = 
+            conn.prepareStatement(
+                  "update writenotice set content = ?"+
+                  "where postId = ?")) {
+         pstmt.setString(1, content);
+         pstmt.setLong(2, no);
+         return pstmt.executeUpdate();
+      }
+   }
+}

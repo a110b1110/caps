@@ -1,0 +1,13 @@
+/join.do=member.command.JoinHandler
+/login.do=auth.command.LoginHandler
+/logout.do=auth.command.LogoutHandler
+/changePwd.do=member.command.ChangePasswordHandler
+#/CreateTeam.do=article.team.command.ListArticleHandler
+#/article/notice/write.do=article.notice.command.WriteArticleHandler
+/noticelist.do=article.notice.command.ListArticleHandler
+#/article/notice/read.do=article.notice.command.ReadArticleHandler
+#/article/notice/modify.do=article.notice.command.ModifyArticleHandler
+/teamwrite.do=article.team.command.WriteArticleHandler
+/teamlist.do=article.team.command.ListArticleHandler
+#/teamread.do=article.team.command.ReadArticleHandler
+#/teamarticlemodify.do=article.team.command.ModifyArticleHandler

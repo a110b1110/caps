@@ -1,0 +1,69 @@
+package article.notice.service;
+
+import java.util.Map;
+import java.util.Date;
+import article.notice.model.Writer;
+
+public class WriteRequest {
+
+   private Writer writer;
+   private Integer number;
+   private String content;
+   private String origin;
+   private String stored;
+   private long fileSize;
+   private String fileExt;
+   private String title;
+
+   public WriteRequest(Writer writer, Integer number, String content,
+         String origin, String stored, long fileSize, String fileExt, String title) {
+      this.writer = writer;
+      this.number = number;
+      this.content = content;
+      this.origin = origin;
+      this.stored = stored;
+      this.fileSize = fileSize;
+      this.fileExt = fileExt;
+      this.title = title;
+   }
+
+   public String getContent() {
+      return content;
+   }
+   
+   public Writer getWriter() {
+      return writer;
+   }
+
+   public Integer getNumber() {
+      return number;
+   }
+
+   public String getOrigin() {
+      return origin;
+   }
+
+   public String getStored() {
+      return stored;
+   }
+
+   public long getFileSize() {
+      return fileSize;
+   }
+
+   public String getFileExt() {
+      return fileExt;
+   }
+
+   public String getTitle() {
+      return title;
+   }
+
+
+
+   public void validate(Map<String, Boolean> errors) {
+      if (title == null || title.trim().isEmpty()) {
+         errors.put("title", Boolean.TRUE);
+      }
+   }
+}

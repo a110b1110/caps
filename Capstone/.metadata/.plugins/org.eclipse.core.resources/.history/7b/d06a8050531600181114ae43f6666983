@@ -1,0 +1,64 @@
+package article.team.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import article.notice.model.TeamContent;
+import jdbc.JdbcUtil;
+
+public class TeamContentDao {
+
+	public TeamContentDao insert(Connection conn, TeamContentDao content) 
+	throws SQLException {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"insert into writeteam " + 
+					"(fileNo, original_Filename, stored_Filename, file_size, file_Ext) values (?,?,?,?,?)");
+			pstmt.setLong(1, content.g);
+			pstmt.setString(2, content.getContent());
+			int insertedCount = pstmt.executeUpdate();
+			if (insertedCount > 0) {
+				return content;
+			} else {
+				return null;
+			}
+		} finally {
+			JdbcUtil.close(pstmt);
+		}
+	}
+	
+	public NoticeContent selectById(Connection conn, int no) throws SQLException {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"select * from article_content where article_no = ?");
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			NoticeContent content = null;
+			if (rs.next()) {
+				content = new NoticeContent(
+						rs.getInt("article_no"), rs.getString("content"), rs.getString("fileName"));
+			}
+			return content;
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+	}
+
+	public int update(Connection conn, int no, String content, String fileName) throws SQLException {
+		try (PreparedStatement pstmt = 
+				conn.prepareStatement(
+						"update notice_content set content = ?, fileName = ? "+
+						"where notice_no = ?")) {
+			pstmt.setString(1, content);
+			pstmt.setString(2, fileName);
+			pstmt.setInt(3, no);
+			return pstmt.executeUpdate();
+		}
+	}
+}

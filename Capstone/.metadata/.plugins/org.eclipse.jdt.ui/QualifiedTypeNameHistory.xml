@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="member.dao.StudentDao"/>
+<fullyQualifiedTypeName name="article.common.service.ArticleNotFoundException"/>
+<fullyQualifiedTypeName name="article.common.service.ArticleContentNotFoundException"/>
+<fullyQualifiedTypeName name="article.common.service.PermissionDeniedException"/>
+<fullyQualifiedTypeName name="team.model.Team"/>
+<fullyQualifiedTypeName name="team.service.MakeTeamRequest"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+<fullyQualifiedTypeName name="article.team.model.TeamArticle"/>
+<fullyQualifiedTypeName name="article.notice.model.Writer"/>
+<fullyQualifiedTypeName name="article.notice.dao.NoticeDao"/>
+<fullyQualifiedTypeName name="article.team.service.DeleteArticleService"/>
+<fullyQualifiedTypeName name="auth.service.AuthGrade"/>
+<fullyQualifiedTypeName name="article.common.PermissionDeniedException"/>
+<fullyQualifiedTypeName name="article.notice.model.NoticeContent"/>
+</qualifiedTypeNameHistroy>

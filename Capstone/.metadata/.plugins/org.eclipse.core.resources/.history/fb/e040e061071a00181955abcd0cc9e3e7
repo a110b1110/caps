@@ -1,0 +1,5 @@
+package article.team.service;
+
+public class DeleteArticleService {
+
+}

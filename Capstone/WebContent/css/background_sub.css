@@ -1,0 +1,21 @@
+﻿@charset "UTF-8";
+
+html, body{
+	margin:0;
+	padding:0;
+	height : 100%;
+}
+body {
+    background-color: #ffffff;
+}
+.title {
+	display:block;
+	margin-right:auto;
+	margin-left:auto;
+	width:50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Fredoka One', cursive;
+    font-size : 1em;
+    color :black;
+}

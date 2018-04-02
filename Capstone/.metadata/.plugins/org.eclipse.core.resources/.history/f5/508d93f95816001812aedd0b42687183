@@ -1,0 +1,47 @@
+package article.team.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Date;
+
+import article.team.dao.*;
+import article.team.model.*;
+import jdbc.JdbcUtil;
+import jdbc.connection.ConnectionProvider;
+
+public class WriteArticleService {
+
+	private TeamArticleDao articleDao = new TeamArticleDao();
+	private TeamContentDao contentDao = new TeamContentDao();
+	
+	public String write(WriteRequest req) {
+		Connection conn = null;
+		try {
+			conn = ConnectionProvider.getConnection();
+			conn.setAutoCommit(false);
+
+			TeamArticle article = toTeamArticle(req);
+			TeamArticle savedArticle = articleDao.insert(conn, article);
+			if (savedArticle == null) {
+				throw new RuntimeException("fail to insert teamboard");
+			}
+
+			conn.commit();
+
+			return savedArticle.getFileNo();
+		} catch (SQLException e) {
+			JdbcUtil.rollback(conn);
+			throw new RuntimeException(e);
+		} catch (RuntimeException e) {
+			JdbcUtil.rollback(conn);
+			throw e;
+		} finally {
+			JdbcUtil.close(conn);
+		}
+	}
+	/*이거 다시 생각해봐야함.*/
+	private TeamArticle toTeamArticle(WriteRequest req) {
+		Date now = new Date();
+		return new TeamArticle(null, req.getOrigin(), req.getStored(), req.getWriter(), req.getFileSize(), req.getFileExt(), now, now, 0);
+	}
+}

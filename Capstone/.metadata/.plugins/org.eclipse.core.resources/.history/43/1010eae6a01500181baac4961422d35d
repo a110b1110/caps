@@ -1,0 +1,18 @@
+package article.team.service;
+
+import article.team.model.TeamArticle;
+import article.team.model.TeamArticleContent;
+
+public class TeamArticleData {
+
+	private TeamArticle article;
+
+	public TeamArticleData(TeamArticle article) {
+		this.article = article;
+	}
+
+	public TeamArticle getArticle() {
+		return article;
+	}
+
+}

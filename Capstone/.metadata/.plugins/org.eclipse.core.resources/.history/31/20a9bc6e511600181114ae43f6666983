@@ -1,0 +1,23 @@
+package article.team.model;
+
+public class TeamContent {
+
+	private String fileNo;
+	private String origin;
+	private String stored;
+	private String fileSize;
+	private String fileExt;
+
+	public TeamContent(String fileNo, String origin, String stored, 
+			String fileSize, String fileExt) {
+		this.fileNo = fileNo;
+		this.origin = origin;
+		this.stored = stored;
+		this.fileSize = fileSize;
+		this.fileExt = fileExt;
+		
+	}
+	
+	
+	
+}
